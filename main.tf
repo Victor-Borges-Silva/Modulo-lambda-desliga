@@ -1,7 +1,6 @@
 resource "aws_lambda_function" "DesligaEC2" {
-  filename      = "${path.module}/lambda_function.zip"
-  function_name = "DesligaEC2"
-  #role             = "arn:aws:iam::087381958847:role/test_Inicia_Desliga_EC2"
+  filename         = "${path.module}/lambda_function.zip"
+  function_name    = var.nome_funcao_desliga
   role             = var.role
   handler          = "lambda_function.lambda_handler"
   runtime          = "python3.8"
